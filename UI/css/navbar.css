@@ -1,0 +1,68 @@
+.navbar{
+    background-color: rgba(7, 40, 30, 0.774);
+    color: #43A047;
+    height: 50px;
+    
+}
+.brand{
+    float: left;
+    list-style: none;
+    margin-top: 5px;
+
+}
+.brand li a{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+
+}
+
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 5px;
+
+}
+.main-nav li{
+    display: inline-block;
+}
+.main-nav li a{
+    color: white;
+    text-decoration: none;
+    padding: 20px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    float: right;
+}
+
+.main-nav li.active a {
+    border: 1px solid white;
+}
+
+.main-nav li a:hover{
+    border: 1px solid white;
+}
+.button{
+    margin-top: 30px;
+    padding: 10px 30px;
+    color:rgb(10, 10, 10);
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: -apple-system, Ubuntu;
+    font-weight: 700;
+}
+.btn-red{
+ background-color: red;
+}
+.btn-green{
+    background-color: green;
+}
+.btn-orange{
+    background-color: orange;
+}
+.btn-blue{
+    background-color: blue;
+}
+
