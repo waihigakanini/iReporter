@@ -1,0 +1,48 @@
+<html>
+    <head><title>LOGIN</title>
+        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" href="css/forms.css">
+        <link rel="stylesheet" href="css/navbar.css">
+    </head>
+    <body background="vid.png">
+        <nav class="navbar">
+            <ul class="main-nav">
+                <li><a href="index.html">HOME</a></li>
+            </ul>
+        </nav>
+       
+       
+        <div class="login-page">
+            <div class="form">
+                <form class="register-form">
+                    <input type="text" placeholder="Enter Username"/>
+                    <input type="text" placeholder="Enter Email"/>
+                    <input type="text" placeholder="Enter password"/>
+                    <input type="text" placeholder="Confirm password"/>
+                    
+                    <button>Create</button>
+                    <p class="message">Already Registered?<a href="#"> Sign in</a></p>
+                </form>
+                
+                <form class="login-form">
+                        <input type="text" placeholder="Enter Username"/>
+                        <input type="password" placeholder="Enter Password"/>
+                        <button onclick="open()">Sign in</button>
+                        <p class="message">Not Registered?<a href="#"> Sign Up</a></p>
+                        <p class="message">Forgot Password?<a href="#"> Click Here</a></p>
+                        
+                </form>
+            </div>
+           
+        </div>
+        <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+        <script>
+        $('.message a').click(function(){
+            $('form').animate({height:"toggle", opacity: "toggle"}, "slow");
+        });
+        function open(){
+            window.location = "dashboard.html"
+        }
+        </script>
+    </body>
+    </html>
