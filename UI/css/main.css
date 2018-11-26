@@ -1,0 +1,157 @@
+*{
+    padding:0;
+}
+header{
+
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(Background\ image.jpeg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    
+
+}
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+
+    
+}
+.main-nav li{
+    display: inline-block;
+}
+.main-nav li a{
+    color: white;
+    text-decoration: none;
+    padding: 2px 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+}
+
+.main-nav li.active a {
+    border: 1px solid white;
+}
+
+.main-nav li a:hover{
+    border: 1px solid white;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.row{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero{
+    position: absolute;
+    width: 1550px;
+    margin-left: 0px;
+    margin-top: 0px;
+    align-self: center;
+}
+
+h2{
+    color: rgb(8, 8, 8);
+    text-transform: auto;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1{
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 250px;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+h3{
+    color: red;
+    text-transform: auto;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+
+}
+
+.button{
+    margin-top: 30px;
+    margin-left: 700px;
+    padding: 10px 30px;
+    color:whitesmoke;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: -apple-system, Ubuntu;
+    font-weight: 700;
+    position: relative;
+}
+
+.btn{
+   
+    padding: 10px 30px;
+    color:whitesmoke;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    
+
+}
+.btn-one
+{
+    background-color: rgb(204, 58, 13);
+    font-family: "Roboto", sans-serif;
+
+}
+.btn-two
+{
+    font-family: "roboto", sans-serif;
+    background-color: darkcyan;
+}
+
+.btn-two:hover
+{
+    background-color: darkorange;
+}
+.card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: left;
+        text-align: center;
+        font-family: arial;
+        
+    
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+.about-us{
+    position: absolute;
+    width: 1550px;
+    margin-left: 0px;
+    margin-top: 0px;
+    align-self: center;
+    font-size: 15px;
+
+}
+
