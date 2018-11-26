@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ADMIN</title>
+        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" href="css/forms.css">
+        <link rel="stylesheet" href="css/navbar.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul class="brand">
+                <li><a href="index.html">iReporter</a></li>
+            </ul>
+            <div class="nav-right">
+                
+                <ul class="main-nav">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+            <ul class="main-nav">
+                <li><a href="index.html">logout</a></li>
+            </ul>
+            </div>
+            
+        </nav>
+        <div class="container">
+            <div class="sidemenu">
+                <button onclick="show('all')" class="button">ALL</button>
+                <button onclick="show('RESOLVED')" class="button">RESOLVED</button>
+                <button onclick="show('DRAFT')" class="button">PENDING</button>
+                <button onclick="show('REJECTED')" class="button">REJECTED</button>
+            </div>
+            <div class="count">
+                <button class="button btn-red">
+                    <p>REJECTED</p>
+                    <h1>8</h1>
+                </button>
+                <button class="button btn-green">
+                        <p>RESOLVED</p>
+                        <h1>7</h1>
+                 </button>
+                    <button class="button btn-orange">
+                            <p>PENDING</p>
+                            <h1>3</h1>
+                        </button>
+                    <button class="button btn-blue">
+                                <p>ALL</p>
+                                <h1>18</h1>
+                        </button>
+            </div>
+            <div class="recordlist">
+                <div class="list" id="all">
+                    <ul>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                      <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list" id="RESOLVED">
+                    <ul>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list" id="DRAFT">
+                    <ul>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list" id="REJECTED">
+                    <ul>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button class="button btn-green">RESOLVE</button>
+                            <button class="button btn-red">REJECT</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+        function show(page){
+            let i, content, contentlink;
+            content = document.getElementsByClassName("list");
+            for (i =0 ; i < content.length; i++){
+                content[i].style.display = "none";
+            }
+            document.getElementById(page).style.display = "flex";
+        }
+        </script>
+
+
+    </body>
+
+</html>
