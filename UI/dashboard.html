@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" href="css/forms.css">
+        <link rel="stylesheet" href="css/navbar.css">
+    </head>
+    <body background="vid.png">
+        <nav class="navbar">
+            <ul class="brand">
+                <li><a href="index.html">iReporter</a></li>
+            </ul>
+            <div class="nav-right">
+                <ul class="main-nav">
+                    <li><a href="userprofile.html">Profile</a></li>
+                </ul>
+                <ul class="main-nav">
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+            <ul class="main-nav">
+                <li><a href="index.html">logout</a></li>
+            </ul>
+            </div>
+            
+        </nav>
+        <div class="container">
+            <button onclick="open1()" class="button"> CREATE RECORD</button>
+            <div class="sidemenu">
+                <button onclick="show('all')" class="button">ALL</button>
+                <button onclick="show('RESOLVED')" class="button">RESOLVED</button>
+                <button onclick="show('DRAFT')" class="button">PENDING</button>
+                <button onclick="show('REJECTED')" class="button">REJECTED</button>
+            </div>
+            <div class="recordlist">
+                <div class="list" id="all">
+                    <ul>
+                         <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                      <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list" id="RESOLVED">
+                    <ul>
+                        <li class="list-item">
+                            <h5 class="item-title">STOLEN PROPERTY</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list" id="DRAFT">
+                    <ul>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">Embezzlement</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list" id="REJECTED">
+                    <ul>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">Nepotism</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="item-title">bribery</h5>
+                            <small>POSTED BY:ABRAHAM OGOL</small>
+                            <small>STATUS:PENDING</small>
+                            <button onclick="open()" class="button btn-green">EDIT</button>
+                            <button class="button btn-red">DELETE</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+        function show(page){
+            let i, content, contentlink;
+            content = document.getElementsByClassName("list");
+            for (i =0 ; i < content.length; i++){
+                content[i].style.display = "none";
+            }
+            document.getElementById(page).style.display = "flex";
+        }
+        function open(){
+            window.location = "edit_redflag_intervention.html"
+        }
+        function open1(){
+            window.location = "add_redflag_intervention.html"
+        }
+        </script>
+
+
+    </body>
+
+</html>
