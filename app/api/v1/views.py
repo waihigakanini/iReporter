@@ -67,7 +67,35 @@ class RedFlag(Resource):
 
         return make_response(jsonify({
             "status": 200,
-            "data" : success_message}))    
+            "data" : success_message}))
+
+
+class EditRedflagLocation(Resource):
+    def __init__(self):
+        self.db = RedFlagModel()
+        
+    def patch(self,redflag_id):
+        incident = self.db.find(redflag_id)
+
+        if incident:
+                     
+                     incident['location'] = request.json.get('location', incident['location'])
+
+                     success_message = {
+                         "id" : redflag_id,
+                         "message" : "Updated red-flag records location"
+                     } 
+                     return make_response(jsonify({
+                         "status" : 201,
+                         "data" : success_message
+                     }), 201)
+
+            
+
+        else:
+            return {'error': 'Red flag does not exist', 'status': 404}
+
+    
 # def put(self, redflag_id):
 #         data = {
 #             'id' : redflag_id,
