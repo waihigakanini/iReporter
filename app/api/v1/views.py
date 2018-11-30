@@ -9,28 +9,13 @@ incidents = []
 class RedFlags(Resource):
     """docstring for RedFlags"""
     
-   
-    
-    def post(self):        
-        data = {
-            'createdOn' : datetime.datetime.utcnow(),
-            'createdBy' : request.json['createdBy'],
-            'type' : 'red-flags',
-            'location' : request.json['location'],
-            'status' : "Under Investigation",
-            # 'images' : request.json['images'],
-            # 'videos' : request.json['videos'],
-            'title' : request.json['title'],
-            'comment' : request.json['comment']
-        }
-        self.db.save(data)
-        
-        success_message = {
-            'message' : 'Thank You for Creating a Red-Flag'
-        }
+    def __init__(self):
+        self.db = RedFlagModel()
 
+    def get(self):
+        self.db.get_all()      
         return make_response(jsonify({
-            "status" : 201,
-            "data" : success_message
-        }), 201)
-    
+            "status" : 200,
+            "data" : self.db.get_all()
+        }), 200) 
+       
