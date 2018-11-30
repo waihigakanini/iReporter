@@ -67,8 +67,7 @@ class RedFlag(Resource):
 
         return make_response(jsonify({
             "status": 200,
-            "data" : success_message}))
-            
+            "data" : success_message}))    
 # def put(self, redflag_id):
 #         data = {
 #             'id' : redflag_id,
