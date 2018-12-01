@@ -59,6 +59,11 @@ class RedFlag(Resource):
         """docstring for getting a redflag record"""
 
         incident = self.db.find(redflag_id)
+        if incident == None:
+            return make_response(jsonify({
+                "status" : 404,
+                "error" : "Red flag does not exist"
+            }), 404)
         return make_response(jsonify({
                     "status" : 200,
                     "data" : incident
@@ -67,6 +72,12 @@ class RedFlag(Resource):
         
         """docstring for deleting a redflag record"""
         incident = self.db.find(redflag_id)
+        if incident == None:
+            return make_response(jsonify({
+                "status" : 404,
+                "error" : "Red flag does not exist"
+            }), 404)
+        
 
         self.db.delete(incident)
         success_message = {
@@ -96,9 +107,9 @@ class RedFlag(Resource):
                          "message" : "Updated red-flag record"
                      } 
                      return make_response(jsonify({
-                         "status" : 201,
+                         "status" : 200,
                          "data" : success_message
-                     }), 201)
+                     }), 200)
 
             
 
@@ -129,9 +140,9 @@ class EditRedflagLocation(Resource):
                          "message" : "Updated red-flag records location"
                      } 
                      return make_response(jsonify({
-                         "status" : 201,
+                         "status" : 200,
                          "data" : success_message
-                     }), 201)
+                     }), 200)
         else:
             return {'error': 'Red flag does not exist', 'status': 404}
 class EditRedflagComment(Resource):
@@ -156,9 +167,9 @@ class EditRedflagComment(Resource):
                 "message" : "Updated red-flag records comment"
             } 
             return make_response(jsonify({
-                "status" : 201,
+                "status" : 200,
                 "data" : success_message
-            }), 201)
+            }), 200)
 
         else:
             return {'error': 'Red flag does not exist', 'status': 404}
