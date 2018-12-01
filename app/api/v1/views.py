@@ -13,6 +13,7 @@ class RedFlags(Resource):
         self.db = RedFlagModel()
 
     def get(self):
+          """docstring for getting all a redflag record"""
         self.db.get_all()      
         return make_response(jsonify({
             "status" : 200,
@@ -21,6 +22,7 @@ class RedFlags(Resource):
        
     
     def post(self):        
+        """docstring for posting a redflag record"""
         data = {
             'createdOn' : datetime.datetime.utcnow(),
             'createdBy' : request.json['createdBy'],
@@ -50,6 +52,7 @@ class RedFlag(Resource):
         
         # self.id = len(self.db) + 1
     def get(self, redflag_id):
+        """docstring for getting a redflag record"""
 
         incident = self.db.find(redflag_id)
         return make_response(jsonify({
@@ -57,6 +60,7 @@ class RedFlag(Resource):
                     "data" : incident
                 }), 200)
     def delete(self, redflag_id):
+        """docstring for deleting a redflag record"""
         incident = self.db.find(redflag_id)
 
         self.db.delete(incident)
@@ -69,6 +73,7 @@ class RedFlag(Resource):
             "status": 200,
             "data" : success_message}))
     def put(self, redflag_id):
+        """docstring for editing contents of a redflag record"""
         incident = self.db.find(redflag_id)
 
         if incident:
@@ -98,11 +103,12 @@ class RedFlag(Resource):
 
 
 class EditRedflagLocation(Resource):
-    """docstring of Update location of redflag"""
+    """docstring of Update location of redflag class"""
     def __init__(self):
         self.db = RedFlagModel()
         
     def patch(self,redflag_id):
+          """docstring for updating location of redflag a redflag record"""
         incident = self.db.find(redflag_id)
 
         if incident:
@@ -123,11 +129,12 @@ class EditRedflagLocation(Resource):
         else:
             return {'error': 'Red flag does not exist', 'status': 404}
 class EditRedflagComment(Resource):
-    """docstring of update location for comment"""
+    """docstring of update comment for a redflag record class"""
     def __init__(self):
         self.db = RedFlagModel()
         
     def patch(self,redflag_id):
+          """docstring for updating comment of  a redflag record"""
         incident = self.db.find(redflag_id)
 
         if incident:
@@ -149,44 +156,3 @@ class EditRedflagComment(Resource):
             return {'error': 'Red flag does not exist', 'status': 404}
 
     
-# def put(self, redflag_id):
-#         data = {
-#             'id' : redflag_id,
-#             'createdOn' : datetime.datetime.utcnow(),
-#             'createdBy' : request.json['createdBy'],
-#             'type' : 'red-flags',
-#             'location' : request.json['location'],
-#             'status' : "Under Investigation",
-#             # 'images' : request.json['images'],
-#             # 'videos' : request.json['videos'],
-#             'title' : request.json['title'],
-#             'comment' : request.json['comment']
-#         }
-
-#         incident = self.db.find(redflag_id)
-
-#         if incident:
-
-#                 incident['createdBy'] = request.json.get('createdBy', incident['createdBy'])
-#                 incident['location'] = request.json.get('location', incident['location'])
-#                 # incident['images'] = request.json.get('images', incident['images'])
-#                 # incident['videos'] = request.json.get('videos', incident['videos'])
-#                 incident['title'] = request.json.get('title', incident['title'])
-#                 incident['comment'] = request.json.get('comment', incident['comment'])
-
-#                 success_message = {
-#                     "id" : redflag_id,
-#                     "message" : "Red-flag has been updated"
-#                 }
-
-#                 return make_response(jsonify({
-#                     "status" : 201,
-#                     "data" : success_message
-#                 }), 201)
-#         return make_response(jsonify({
-#             "status" : 404,
-#             "error" : "Red-flag does not exist"
-#         }), 404)
-
-       
-       
