@@ -30,7 +30,7 @@ class RedFlagTestCase(unittest.TestCase):
 
             "location" : "kayole",
 
-            "status" : "draft",
+            "status" : "resolved",
 
             "images" : "",
 
