@@ -36,16 +36,22 @@ iReporter enables any/every citizen to bring any form of corruption to the notic
     - mkdir repository
     - cd into the repository(in our case the iReporter repository)
     - git clone the repository url (https://github.com/waihigakanini/iReporter.git)
-
+#### Step 1
+   - python3 -m venv ireporter
+   - source ireporter/bin/activate (to activate virtual env)
+   - pip install -r requirements.txt (install app dependencies)
+### Step 2. run the app
+   - To start the app run the command below
+   - python run.py
+   - Test the endpoints in the next section with Postman
 
 ### TESTS
-
-/home/loise/Pictures/Screenshot from 2018-12-03 19-33-17.png
-
-
 - To test the app run the command below
 - py.test --cov=app test/ (to test and give coverage)
 - You should see an image like below alt Tests image
+
+![screenshot from 2018-12-03 19-33-17](https://user-images.githubusercontent.com/45232680/49396790-08614380-f74b-11e8-98f1-a7386325835d.png)
+
 ### Hosting
 This app is hosted at Heroku 
 https://dashboard.heroku.com/apps/infinite-meadow-22437/deploy/github
@@ -57,10 +63,3 @@ This app was built by Loise waihiga Kanini
 
 
 
-1. Build status
-2. Project title
-3. Tech/framework used
-4. Features/Endpoints
-5. Installation
-6. Tests
-7. Owner
