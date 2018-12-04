@@ -1,14 +1,11 @@
 from flask_restful import Resource
 from flask import jsonify, make_response, request, abort
 from .models import RedFlagModel
-
 import datetime 
 
 incidents = []
-
 class RedFlags(Resource):
     """class for RedFlags"""
-    
     def __init__(self):
         self.db = RedFlagModel()
 
@@ -28,8 +25,6 @@ class RedFlags(Resource):
             'type' : 'red-flags',
             'location' : request.json['location'],
             'status' : "Under Investigation",
-            # 'images' : request.json['images'],
-            # 'videos' : request.json['videos'],
             'title' : request.json['title'],
             'comment' : request.json['comment']
         }
@@ -84,9 +79,6 @@ class RedFlag(Resource):
                      incident['createdBy'] = request.json.get('createdBy', incident['createdBy'])
                      incident['title'] = request.json.get('title', incident['title'])
                      incident['comment'] = request.json.get('comment', incident['comment'])
-                     #incident['images'] = request.json.get('images', incident['images'])
-                     #incident['videos'] = request.json.get('videos', incident['videos'])
-
                      success_message = {
                          "id" : redflag_id,
                          "message" : "Updated red-flag record"

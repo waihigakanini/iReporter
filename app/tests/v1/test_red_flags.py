@@ -7,9 +7,7 @@ app = create_app()
 class RedFlagTestCase(unittest.TestCase):
 
     def setUp(self):
-
         app.testing = True
-
         self.app = app.test_client()
 
         self.data = {
@@ -41,8 +39,6 @@ class RedFlagTestCase(unittest.TestCase):
         self.assertEqual(result.status_code, 201)
         self.assertIn('Thank You for Creating a Red-Flag', str(result.data))
 
-
-
     def test_get_specific_redflag(self):
         """Test get a specific redflag"""
         response = self.app.post("/api/v1/red-flags",
@@ -51,8 +47,6 @@ class RedFlagTestCase(unittest.TestCase):
 
         result = self.app.get("/api/v1/red-flags/1")
         self.assertEqual(result.status_code, 200)   
-
-
 
     def test_update_location_of_specific_redflag(self):
         """Test update location of a specific redflag"""
