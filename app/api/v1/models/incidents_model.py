@@ -1,15 +1,19 @@
+import datetime
 red_flag_list = []
-
-class RedFlagModel():
-    """class for redflag model"""
+ 
+class RedFlagsModel():
     def __init__(self):
-        """"""
         self.db = red_flag_list
-
+        
+    def get_all(self):
+        """method for getting all redflags in a list"""
+        if not self.db:
+            return "none"
+        return self.db
     def save(self, data):
         """method for creating and adding an incident"""
-        data['id'] = len(self.db) + 1
         self.db.append(data)
+        return data
     
     def find(self, id):
         """method for finding an incident in a list"""
@@ -21,11 +25,14 @@ class RedFlagModel():
     def delete(self, incident):
         """method for deleting an incident in a list"""
         self.db.remove(incident)
-
-    def get_all(self):
-        """method for getting all redflags in a list"""
-        return self.db
-
-    def edit_comment(self,id):
+        
+    def generate_id(self, id):
+        """docstring for the generation of incident ids"""
         pass
+
+
+
+
+
+
           

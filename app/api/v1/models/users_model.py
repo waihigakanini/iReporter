@@ -17,6 +17,14 @@ class UsersModel():
             if user['id'] == id:
                 return user
         return None
+    
+    def find_username(self, username):
+        """method for finding users by username"""
+        for user in self.db:
+            if user['username'] == username:
+                return user
+        return None
+
 
     def delete(self, user):
         """method for deleting user"""

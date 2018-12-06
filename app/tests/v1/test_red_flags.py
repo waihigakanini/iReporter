@@ -14,14 +14,14 @@ class RedFlagTestCase(unittest.TestCase):
 
             "id": 1,
             "createdOn" : "Tue, 27 Nov 2018 21:18:13 GMT",
-            "createdBy" : "Admin",
+            "createdby" : "Loise waihiga",
             'type' : 'red-flags',
-            "location" : "kayole",
+            "location" : "-90.0, 150.02",
             "status" : "resolved",
             "images" : "",
             "videos" : "",
             "title" : "Police taking bribe",
-            "comment" : "this case should be seriously handled."
+            "comment" : "This case should be seriously handled."
 
         }
     def test_get_all_redflags(self):
@@ -50,6 +50,8 @@ class RedFlagTestCase(unittest.TestCase):
 
     def test_update_location_of_specific_redflag(self):
         """Test update location of a specific redflag"""
+        response = self.app.post("/api/v1/red-flags",
+                    headers={'Content-Type': 'application/json'}, data=json.dumps(self.data))
         result = self.app.patch("/api/v1/red-flags/1/location",
                     headers={'Content-Type': 'application/json'}, data=json.dumps({"location" : "kayole"}))
         self.assertEqual(result.status_code, 200)    
@@ -58,7 +60,7 @@ class RedFlagTestCase(unittest.TestCase):
     def test_update_comment_of_specific_redflag(self):
         """Test update comment of a specific redflag"""
         result = self.app.patch("/api/v1/red-flags/1/comment",
-                    headers={'Content-Type': 'application/json'}, data=json.dumps({"comment" : "Cartels are taking over Kenya"}))
+                    headers={'Content-Type': 'application/json'}, data=json.dumps({"comment" : "police taking bribe"}))
 
         self.assertEqual(result.status_code, 200) 
         self.assertIn("Updated red-flag records comment", str(result.data)) 
@@ -75,9 +77,14 @@ class RedFlagTestCase(unittest.TestCase):
     def test_redflag_not_found(self):
         """Test a redflag not found"""
         result = self.app.get("/api/v1/red-flags/10")
+        self.assertEqual(result.status_code, 200) 
+        self.assertIn('Red flag does not exist', str(result.data))
+    def test_404_errors(self):
+        """Test for page not found"""
+        result = self.app.get("/api/v1/red-flags/////")
         self.assertEqual(result.status_code, 404) 
-        self.assertIn('Red flag does not exist', str(result.data))                          
-
+        self.assertIn('page not found', str(result.data))
+        
 
 
 if __name__ == "__main__":
