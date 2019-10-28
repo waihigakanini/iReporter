@@ -17,16 +17,16 @@ iReporter enables any/every citizen to bring any form of corruption to the notic
 
 ### FEATURES AND ENDPOINTS
 
-|Resource urls                                    | Method     | Description            |
-|-------------------------------------------------|------------|---------------------- -|
-| /api/v1/red-flag                                |   POST     | Create a redflag       |
-| /api/v1/red-flag                                |   GET      | Get all redflags       |
-| /api/v1/red-flag/id                             |   GET      | Get a redflag by Id    |
-| /api/v1/red-flag/id                             |   DELETE   | Delete a redflag       |
-| /api/v1/red-flags/id/comment                    |   PATCH    | Update redflag comment |
-| /api/v1/red-flag/id/location                    |   PATCH    | Edit redflag location  |
-| /api/v1/red-flags/id                            |   PUT      | Update redflag detail  |
-| /api/v1/auth/signup                             |   POST     | Login a user           |
+|Resource urls                                  | Method     | Description          |
+|- ---------------------------------------------|------------|----------------------|
+|/api/v1/red-flag                               |   POST     | Create a redflag     |
+|/api/v1/red-flag                               |   GET      | Get all redflags     |
+|/api/v1/red-flag/id                            |   GET      | Get a redflag by Id  |
+|/api/v1/red-flag/id                            |   DELETE   | Delete a redflag     |
+|/api/v1/red-flags/id/comment                   |   PATCH    | Update redflag commen|
+|/api/v1/red-flag/id/location                   |   PATCH    | Edit redflag location|
+|/api/v1/red-flags/id                           |   PUT      | Update redflag detail|
+|/api/v1/auth/signup                            |   POST     | Login a user         |
 
 ### INSTALLATION
 - Create the directory where you want to clone the repository.(iReporter)
