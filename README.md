@@ -18,7 +18,7 @@ iReporter enables any/every citizen to bring any form of corruption to the notic
 ### FEATURES AND ENDPOINTS
 
 |Resource urls                                  | Method     | Description          |
-|- ---------------------------------------------|------------|----------------------|
+|:----------------------------------------------|:----------:|---------------------:|
 |/api/v1/red-flag                               |   POST     | Create a redflag     |
 |/api/v1/red-flag                               |   GET      | Get all redflags     |
 |/api/v1/red-flag/id                            |   GET      | Get a redflag by Id  |
